@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Firaaa cantiiikk 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #e6d6ff, #ffc8dd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  color: #803b66;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px 22px;
+  background: rgba(255,255,255,0.88);
+  border: 2px solid white;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 15px 45px #b76e9c35;
+  position: relative;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+h1 {
+  color: #e75491;
+  font-size: 27px;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.question {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 25px 0;
+}
+
+button {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+#yes {
+  background: linear-gradient(135deg, #ff65a3, #d85bff);
+  color: white;
+  box-shadow: 0 5px 15px #e7549140;
+}
+
+#no {
+  background: #eee5f5;
+  color: #875c8b;
+}
+
+#letter {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  background: #fff0f7;
+  border-radius: 20px;
+  text-align: left;
+  animation: appear 0.6s ease;
+}
+
+#letter h2 {
+  text-align: center;
+  color: #e75491;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  font-size: 24px;
+  animation: floatUp 7s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  font-size: 12px;
+  margin-top: 25px;
+  color: #b27a9b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="heart">💗</div>
+
+  <h1>Haii, Firaaa cantiiiiiikkk! 🌷</h1>
+
+  <p>
+    akuuu punya pertanyaan penting
+    niehh sayangggg....
+  </p>
+
+  <div class="question">
+    ayangggg sayang aku enggak niehhh? 💕
+  </div>
+
+  <div class="buttons">
+    <button id="yes" onclick="showLove()">
+      SAYANGGG 💖
+    </button>
+
+    <button id="no" onclick="shrinkNo()">
+      ENGGAK 😝
+    </button>
+  </div>
+
+  <p id="hint">Pilih yang jujur yaaa, ayanggg 🥺</p>
+
+  <div id="letter">
+    <h2>YEAYYY!! 💗</h2>
+
+    <p>
+      Hhehe, aku tau kok jawabannyaaa! 🥹💕
+    </p>
+
+    <p>
+      Makasih yaa udah hadir di hidup aku.
+      Walaupun kita jauh, aku tetap bersyukur
+      bisa kenal dan sayang sama ayangggg.
+    </p>
+
+    <p>
+      Aku mungkin belum bisa selalu ada di samping
+      ayanggg secara langsung, tapi aku pengen terus
+      berusaha jadi seseorang yang bisa bikin ayangg
+      merasa disayang, dihargai, dan bahagia.
+    </p>
+
+    <p>
+      Semoga kita bisa terus saling jaga,
+      saling percaya, dan sama-sama berjuang
+      sampai suatu hari nanti jarak ini bukan
+      lagi penghalang buat kita. 🤍
+    </p>
+
+    <p style="text-align:center; font-weight:bold;">
+      WAPYUUUUUUUUUUUUUUUUUUUUUUUUUU, AYANGGGGGG! 💋💗<br>
+      — Dari seseorang yang sayang banget sama ayangggg,
+      yaitu akuuuuu 😂
+    </p>
+  </div>
+
+  <div class="footer">
+    Made with love, especially for Safira 💌
+  </div>
+</div>
+
+<script>
+let yesSize = 1;
+let noSize = 1;
+
+function shrinkNo() {
+  noSize *= 0.75;
+  yesSize *= 1.15;
+
+  document.getElementById("no").style.transform =
+    "scale(" + noSize + ")";
+
+  document.getElementById("no").style.opacity =
+    Math.max(noSize, 0.25);
+
+  document.getElementById("yes").style.transform =
+    "scale(" + Math.min(yesSize, 1.8) + ")";
+
+  document.getElementById("hint").textContent =
+    "Eitsss, kok enggak sihhh? Coba lagi donggg 😝💗";
+}
+
+function showLove() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("hint").textContent =
+    "waawww, peluk jauh buat ayangggg! 🫂💖";
+
+  document.getElementById("yes").textContent =
+    "IIII AKUUU JUGAA 💋";
+
+  document.getElementById("letter").scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+}
+
+for (let i = 0; i < 18; i++) {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.textContent = ["💗", "💕", "💖", "🌸", "💘"][i % 5];
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDelay = Math.random() * 7 + "s";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
